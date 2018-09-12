@@ -5,6 +5,11 @@ using namespace std;
 
 
 GradeBook::GradeBook(string name)
+    : aCount( 0 ),
+      bCount( 0 ),
+      cCount( 0 ),
+      dCount( 0 ),
+      eCount( 0 )
 {
     setCourseName(name);
 }
@@ -59,5 +64,87 @@ void GradeBook::determineClassAverage() const
     else
         cout << "No grades were entered" << endl;
 
+}
+
+void GradeBook::inputGrades()
+{
+    /*
+    int grade;
+
+    cout << "Enter the letter grades." << endl
+         << "Enter the EOF character to end input." <<endl;
+
+    while (( grade = cin.get()) != EOF )
+    {
+        switch ( grade )
+        {
+        case 'A':
+        case 'a':
+            ++aCount;
+            break;
+        case 'B':
+        case 'b':
+            ++bCount;
+            break;
+        case 'C':
+        case 'c':
+            ++cCount;
+            break;
+        case 'D':
+        case 'd':
+            ++dCount;
+            break;
+        case 'E':
+        case 'e':
+            ++eCount;
+            break;
+        case '\n':
+        case '\t':
+        case ' ':
+            break;
+        default:
+            cout << "Incorrect letter grade entered."
+                 << "Enter a new grade." << endl;
+            break;
+
+        }
+    }
+    */
+
+    int grade1;
+    int grade2;
+    int grade3;
+
+    cout << "Enter three integer grades: ";
+    cin >> grade1 >> grade2 >> grade3;
+
+    maximumGrade = maximum(grade1, grade2, grade3);
+
+}
+
+void GradeBook::displayGradeReport() const
+{
+    /*
+    cout << "\n\nNumber of students who received each letter grade:"
+         << "\nA: " << aCount
+         << "\nB: " << bCount
+         << "\nC: " << cCount
+         << "\nD: " << dCount
+         << "\nE: " << eCount
+         << endl;
+         */
+    cout << "Maximum of grades entered: " << maximumGrade << endl;
+
+}
+
+int GradeBook::maximum(int x, int y, int z) const
+{
+    int maxvalue = x;
+    if ( y > maxvalue )
+        maxvalue = y;
+    if ( z > maxvalue )
+        maxvalue = z;
+
+    return maxvalue;
 }
 

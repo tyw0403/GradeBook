@@ -17,6 +17,8 @@ int main(int argc, char *argv[])
     cout << "\ngradeBook1's course name is: " << gradeBook1.getCourseName()
          << "\ngradeBook2's course name is: " << gradeBook2.getCourseName() << endl;
 
-    gradeBook1.determineClassAverage();
+//    gradeBook1.determineClassAverage();
+    gradeBook1.inputGrades();
+    gradeBook1.displayGradeReport();
     return 0;
 }
